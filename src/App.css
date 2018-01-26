@@ -51,7 +51,6 @@ li a {
   transition: color 200ms ease;
 }
 
-
 li a:visited {
   color: #AFD5DE;
 }
@@ -61,6 +60,7 @@ li a:hover {
 }
 
 .content {
-  margin-top: 2em;
+  margin: 2em 1em 1em 1em;
+  padding: 1em 0 0 1em;
   width: 1000px;
 }

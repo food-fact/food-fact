@@ -5,7 +5,7 @@ import {
   Route,
   Link
 } from 'react-router-dom'
-import Home from './Home';
+import Taco from './Taco';
 import Lookup from './Lookup';
 
 
@@ -18,14 +18,14 @@ class App extends Component {
             <div className="header_content">
               <h1>Tacos and Lookup</h1>
               <ul>
-                <li><Link to="/">Home</Link></li>
+                <li><Link to="/">Taco</Link></li>
                 <li><Link to="/lookup">Lookup</Link></li>
               </ul>
             </div>
           </div>
 
           <div className="content">
-            <Route exact path="/" component={Home}/>
+            <Route exact path="/" component={Taco}/>
             <Route path="/lookup" component={Lookup}/>
           </div>
         </div>

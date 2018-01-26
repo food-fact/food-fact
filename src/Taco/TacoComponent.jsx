@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import Button from '../common/Button';
 
-class HomeContainer extends Component {
+class TacoComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -37,4 +37,4 @@ class HomeContainer extends Component {
   }
 }
 
-export default HomeContainer;
+export default TacoComponent;
