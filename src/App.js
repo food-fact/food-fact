@@ -18,7 +18,7 @@ class App extends Component {
             <div className="header_content">
               <h1>Tacos and Lookup</h1>
               <ul>
-                <li><Link to="/">Taco</Link></li>
+                <li><Link to="/food-fact">Taco</Link></li>
                 <li><Link to="/lookup">Lookup</Link></li>
               </ul>
             </div>
@@ -26,6 +26,7 @@ class App extends Component {
 
           <div className="content">
             <Route exact path="/" component={Taco}/>
+            <Route path="/food-fact" component={Taco}/>
             <Route path="/lookup" component={Lookup}/>
           </div>
         </div>
