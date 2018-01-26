@@ -10,20 +10,23 @@ class LookupContainer extends Component {
       product: null,
     };
 
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.fetchFacts = this.fetchFacts.bind(this);
   }
 
-  componentDidMount() {
-  }
-
   fetchFacts() {
-    fetch('https://world.openfoodfacts.org/api/v0/product/' + this.state.barcode + '.json')
+    fetch(`https://world.openfoodfacts.org/api/v0/product/${this.state.barcode}.json`)
       .then(results => {
         return results.json();
       }).then(data => {
       this.setState({product: data.product})
     })
+  }
+
+  handleChange(event) {
+    this.setState({barcode: event.target.value});
+    event.preventDefault();
   }
 
   handleSubmit(event) {
@@ -32,7 +35,6 @@ class LookupContainer extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
