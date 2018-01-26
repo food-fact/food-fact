@@ -19,8 +19,6 @@ class App extends Component {
             <li><Link to="/lookup">Lookup</Link></li>
           </ul>
 
-          <hr/>
-
           <Route exact path="/" component={Home}/>
           <Route path="/lookup" component={Lookup}/>
         </div>

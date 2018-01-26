@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react';
+import React, { Component, Fragment } from 'react';
 
 class HomeContainer extends Component {
   constructor(props) {

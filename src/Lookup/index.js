@@ -1,3 +1,3 @@
-import LookupContainer from "./LookupContainer";
+import LookupComponent from "./LookupComponent";
 
-export default LookupContainer;
+export default LookupComponent;

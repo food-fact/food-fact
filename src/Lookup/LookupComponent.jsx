@@ -6,22 +6,12 @@ class LookupContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      barcode: '',
+      barcode: null,
       product: null,
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.fetchFacts = this.fetchFacts.bind(this);
-  }
-
-  fetchFacts() {
-    fetch(`https://world.openfoodfacts.org/api/v0/product/${this.state.barcode}.json`)
-      .then(results => {
-        return results.json();
-      }).then(data => {
-      this.setState({product: data.product})
-    })
   }
 
   handleChange(event) {
@@ -30,8 +20,13 @@ class LookupContainer extends Component {
   }
 
   handleSubmit(event) {
+    fetch(`https://world.openfoodfacts.org/api/v0/product/${this.state.barcode}.json`)
+      .then(results => {
+        return results.json();
+      }).then(data => {
+      this.setState({product: data.product})
+    });
     event.preventDefault();
-    this.fetchFacts();
   }
 
   render() {
@@ -48,8 +43,8 @@ class LookupContainer extends Component {
         {
           this.state.product &&
           <Fragment>
-            <h2>name: {this.state.product.product_name_en}</h2>
-            <h2>energy: {this.state.product.nutriments.energy}</h2>
+            <h2>Product Name: {this.state.product.product_name_en}</h2>
+            <h2>Calories: {this.state.product.nutriments.energy} </h2>
           </Fragment>
         }
       </div>
