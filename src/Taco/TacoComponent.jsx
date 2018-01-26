@@ -13,7 +13,7 @@ class TacoComponent extends Component {
   }
 
   fetchData() {
-    fetch(`http://taco-randomizer.herokuapp.com/random/`)
+    fetch(`https://taco-randomizer.herokuapp.com/random/`)
       .then(results => {
         return results.json();
       }).then(data => this.setState({taco: data}));
