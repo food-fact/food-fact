@@ -12,20 +12,20 @@ import Lookup from './Lookup';
 class App extends Component {
   render() {
     return (
-      <Router>
+      <Router basename="/food-fact">
         <div className="app">
           <div className="header">
             <div className="header_content">
               <h1>Tacos and Lookup</h1>
               <ul>
-                <li><Link to="/">Taco</Link></li>
+                <li><Link to="/Taco">Taco</Link></li>
                 <li><Link to="/lookup">Lookup</Link></li>
               </ul>
             </div>
           </div>
 
           <div className="content">
-            <Route exact path="/" component={Taco}/>
+            <Route exact path="/Taco" component={Taco}/>
             <Route path="/lookup" component={Lookup}/>
           </div>
         </div>
