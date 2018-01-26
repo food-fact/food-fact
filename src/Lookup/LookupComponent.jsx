@@ -37,8 +37,8 @@ class LookupContainer extends Component {
         <form onSubmit={this.handleSubmit} className="form">
           <label className="label">
             Barcode: (try 737628064502)
-            <input type="text" value={this.state.value} onChange={this.handleChange} placeholder="barcode here"/>
           </label>
+          <input type="text" value={this.state.value} onChange={this.handleChange} placeholder="barcode here"/>
           <ButtonComponent name="submit" value="Submit" className="button" />
         </form>
 
