@@ -1,0 +1,17 @@
+.button {
+    background: none;
+    background-color: #3E516B;
+    border: 0;
+    box-shadow: 3px 3px #7FA4B6;
+    color: #AFD5DE;
+    /* cursor: default; */
+    font: inherit;
+    font-weight: bold;
+    line-height: normal;
+    overflow: visible;
+    padding: 10px;
+    -webkit-appearance: button; /* for input */
+    -webkit-user-select: none; /* for button */
+    -moz-user-select: none;
+    -ms-user-select: none;
+}

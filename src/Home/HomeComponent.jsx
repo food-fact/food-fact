@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import Button from '../common/Button';
 
 class HomeContainer extends Component {
   constructor(props) {
@@ -6,9 +7,11 @@ class HomeContainer extends Component {
     this.state = {
       taco: null,
     };
+
+    this.fetchData = this.fetchData.bind(this);
   }
 
-  componentDidMount() {
+  fetchData() {
     fetch(`http://taco-randomizer.herokuapp.com/random/`)
       .then(results => {
         return results.json();
@@ -18,6 +21,7 @@ class HomeContainer extends Component {
   render() {
     return (
       <div>
+        <Button name="Generate New Taco Recipe" onClick={this.fetchData} />
         {
           this.state.taco &&
           <Fragment>
