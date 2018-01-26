@@ -49,6 +49,7 @@ li a {
   display: flex;
   text-decoration:none;
   transition: color 200ms ease;
+  color: #AFD5DE;
 }
 
 li a:visited {
