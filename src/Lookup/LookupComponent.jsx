@@ -1,4 +1,6 @@
 import React, { Component, Fragment } from 'react';
+import './LookupStyles.css';
+import ButtonComponent from "../common/Button/ButtonComponent";
 
 //737628064502
 //722252102607
@@ -7,7 +9,7 @@ class LookupContainer extends Component {
     super(props);
     this.state = {
       barcode: null,
-      product: null,
+      response: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -24,7 +26,7 @@ class LookupContainer extends Component {
       .then(results => {
         return results.json();
       }).then(data => {
-      this.setState({product: data.product})
+      this.setState({response: data})
     });
     event.preventDefault();
   }
@@ -32,21 +34,24 @@ class LookupContainer extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Barcode:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
+        <form onSubmit={this.handleSubmit} className="form">
+          <label className="label">
+            Barcode: (try 737628064502)
+            <input type="text" value={this.state.value} onChange={this.handleChange} placeholder="barcode here"/>
           </label>
-          <input type="submit" value="Submit" />
+          <ButtonComponent name="submit" value="Submit" className="button" />
         </form>
 
-        {
-          this.state.product &&
-          <Fragment>
-            <h2>Product Name: {this.state.product.product_name_en}</h2>
-            <h2>Calories: {this.state.product.nutriments.energy} </h2>
-          </Fragment>
-        }
+        <div  className="lookup">
+          {
+            this.state.response.status ?
+            <Fragment>
+              <h2>Product Name: {this.state.response.product.product_name}</h2>
+              <h2>Calories: {this.state.response.product.nutriments.energy} </h2>
+            </Fragment>
+              : <h4>No results</h4>
+          }
+        </div>
       </div>
     )
   }

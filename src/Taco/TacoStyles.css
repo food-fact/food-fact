@@ -1,0 +1,13 @@
+.taco h2 {
+    margin: 0 5px 15px 5px;
+}
+
+.taco h2:last-child {
+    margin-bottom: 0;
+}
+
+.taco {
+    background-color: #617B98;
+    margin-top: 1em;
+    padding: 1em;
+}
